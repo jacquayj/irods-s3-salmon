@@ -15,10 +15,20 @@ def main(event, context):
         pass
         # event.Records[0].s3.bucket.name
         # event.Records[0].s3.object.key
+        # event.Records[0].eventName
 
-        
+        s3_object = "whatever" # should come from event object
+
+        # TODO
+        # switch based on eventName
+            # case ObjectCreated:Put
+                # Update iRODS hashes and file size, using session
+            # case ObjectCreated:Post
+                # Create new iRODS object, using event data above, using session
+            # case ObjectCreated:Delete
+                # Delete iRODS record, using session
 
 
     return { 
-        'message' : message
+        'message' : "Updated iRODS object record {}".format(s3_object)
     }
