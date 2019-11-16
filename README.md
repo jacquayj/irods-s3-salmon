@@ -6,7 +6,7 @@
 
 1. Create lambda execution role
 
-https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html
+    https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html
 
 2. Deploy lambda
     
@@ -33,7 +33,7 @@ https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html
         * Send to – Lambda function.
         * Lambda – s3salmon.
 
-https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-event-notifications.html
+    https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-event-notifications.html
 
 ## Update Lambda
 
