@@ -4,20 +4,25 @@
 
 ## Setup Instructions
 
-1. Deploy lambda
-```
-$ git clone https://github.com/jacquayj/irods-s3-salmon.git
-$ cd irods-s3-salmon
+1. Create lambda execution role
 
-$ export AWS_PROFILE=<your-profile>           # bioteam-john
-$ export AWS_ACCOUNT_ID=<your-aws-account-id> # 098381893833
-$ export S3_BUCKET=<your-bucket>              # jj-irods
-$ export LAMBDA_ROLE_ARN=<lambda-role-arn>    # arn:aws:iam::098381893833:role/lambda-role
+https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html
 
-$ ./create.sh
-```
+2. Deploy lambda
+    
+    ```
+    $ git clone https://github.com/jacquayj/irods-s3-salmon.git
+    $ cd irods-s3-salmon
 
-2. Setup S3 Events
+    $ export AWS_PROFILE=<your-profile>           # bioteam-john
+    $ export AWS_ACCOUNT_ID=<your-aws-account-id> # 098381893833
+    $ export S3_BUCKET=<your-bucket>              # jj-irods
+    $ export LAMBDA_ROLE_ARN=<lambda-role-arn>    # arn:aws:iam::098381893833:role/lambda-role
+
+    $ ./create.sh
+    ```
+
+3. Setup S3 Events
 
     1. Open the Amazon S3 console.
     2. Choose the source bucket.
