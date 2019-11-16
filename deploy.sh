@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export AWS_PROFILE=bms-gen3-test
+#export AWS_PROFILE=bms-gen3-test
+export AWS_PROFILE=bioteam-john
 
 pip3 install --target ./package python-irodsclient
 
