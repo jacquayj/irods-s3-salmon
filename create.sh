@@ -14,6 +14,7 @@ aws lambda create-function \
 --runtime python3.7 \
 --zip-file fileb://s3salmon.zip \
 --role $LAMBDA_ROLE_ARN \
+--environment {"Variables": {"IRODS_HOST": "$IRODS_HOST", "IRODS_PORT": "$IRODS_PORT", "IRODS_USER": "$IRODS_USER", "IRODS_PASSWORD": "$IRODS_PASSWORD", "IRODS_ZONE": "$IRODS_ZONE", "IRODS_S3_RESC": "$IRODS_S3_RESC", "IRODS_VAULT_PREFIX": "$IRODS_VAULT_PREFIX"}} \
 --handler s3salmon.main
 
 aws lambda add-permission --function-name s3salmon --principal s3.amazonaws.com \

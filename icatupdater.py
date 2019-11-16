@@ -2,9 +2,13 @@ import os, ssl, logging
 from irods.session import iRODSSession
 from irods.exception import CATALOG_ALREADY_HAS_ITEM_BY_THAT_NAME
 
-IRODS_ZONE = "tempZone"
-IRODS_S3_RESC = "s3resc"
-IRODS_VAULT_PREFIX = "irods/Vault"
+IRODS_HOST = os.getenv('IRODS_HOST')
+IRODS_PORT = int(os.getenv('IRODS_PORT'))
+IRODS_USER = os.getenv('IRODS_USER')
+IRODS_PASSWORD = os.getenv('IRODS_PASSWORD')
+IRODS_ZONE = os.getenv('IRODS_ZONE')
+IRODS_S3_RESC = os.getenv('IRODS_S3_RESC')
+IRODS_VAULT_PREFIX = os.getenv('IRODS_VAULT_PREFIX')
 
 logger = logging.getLogger("icatupdater")
 logger.setLevel(logging.INFO)
@@ -17,8 +21,7 @@ def remove_prefix(text, prefix):
 def main(event, context):
 
     logger.info("Opening iRODS session")
-    with iRODSSession(host='irods.johnjacquay.com', port=1247, user='rods', password='testpassword', zone='tempZone') as session:
-        
+    with iRODSSession(host=IRODS_HOST, port=IRODS_PORT, user=IRODS_USER, password=IRODS_PASSWORD, zone=IRODS_ZONE) as session:
         event_name = event['Records'][0]['eventName']
         bucket_name = event['Records'][0]['s3']['bucket']['name']
         object_key = event['Records'][0]['s3']['object']['key'] # irods/Vault/home/rods/requirements.txt

@@ -14,11 +14,9 @@
     $ git clone https://github.com/jacquayj/irods-s3-salmon.git
     $ cd irods-s3-salmon
 
-    $ export AWS_PROFILE=<your-profile>           # bioteam-john
-    $ export AWS_ACCOUNT_ID=<your-aws-account-id> # 098381893833
-    $ export S3_BUCKET=<your-bucket>              # jj-irods
-    $ export LAMBDA_ROLE_ARN=<lambda-role-arn>    # arn:aws:iam::098381893833:role/lambda-role
+    # Modify config in env.sh
 
+    $ source env.sh
     $ ./create.sh
     ```
 
