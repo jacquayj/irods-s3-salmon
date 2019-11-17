@@ -40,16 +40,17 @@ $ ils
     - `SecretsManagerReadWrite`
     - `AWSLambdaExecute`
 
+    https://console.aws.amazon.com/iam/home#/roles
     https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html
 
 2. Create secrets
-
-    https://console.aws.amazon.com/secretsmanager/home
 
     - Type: `Other type of secrets`
     - Secret key/value #1: `s3salmon_user: rods`
     - Secret key/value #2: `s3salmon_password: testpassword`
     - Secret name: `s3salmon`
+
+    https://console.aws.amazon.com/secretsmanager/home
 
 3. Deploy lambda
     
