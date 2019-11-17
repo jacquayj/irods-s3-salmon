@@ -6,17 +6,17 @@
 
 No more:
 
-- Stale and out-of-sync data catalogs
-- Waiting for scheduled jobs to run
-- Orphaned data object records
+    - Stale and out-of-sync data catalogs
+    - Waiting for scheduled jobs to run
+    - Orphaned data object records
 
  ```
-      /`·.¸
-     /¸...¸`:·
- ¸.·´  ¸   `·.¸.·´)
-: © ):´;      ¸  {
- `·.¸ `·  ¸.·´\`·¸)
-     `\\´´\¸.·´
+                                 /`·.¸
+                                /¸...¸`:·
+                            ¸.·´  ¸   `·.¸.·´)
+                           : © ):´;      ¸  {
+                            `·.¸ `·  ¸.·´\`·¸)
+                                `\\´´\¸.·´
  ```
 
 **NOTE:** This has only been tested with `cacheless_attached` mode with [irods_resource_plugin_s3](https://github.com/irods/irods_resource_plugin_s3)
