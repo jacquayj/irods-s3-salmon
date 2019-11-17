@@ -19,6 +19,16 @@
 
 **NOTE:** This has only been tested with `cacheless_attached` mode with [irods_resource_plugin_s3](https://github.com/irods/irods_resource_plugin_s3)
 
+## Usage Example
+
+```
+$ aws s3 cp 56001801068846B_WGZ.indel.vcf.gz s3://jj-irods/irods/Vault/home/rods/56001801068846B_WGZ.indel.vcf.gz
+
+$ ils
+/tempZone/home/rods:
+  56001801068846B_WGZ.indel.vcf.gz
+```
+
 ## Setup Instructions
 
 1. Create lambda execution role, take note of ARN string
