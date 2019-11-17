@@ -1,6 +1,7 @@
 import os, ssl, logging
 from irods.session import iRODSSession
 from irods.exception import CATALOG_ALREADY_HAS_ITEM_BY_THAT_NAME
+import urllib.parse
 
 IRODS_HOST = os.getenv('IRODS_HOST')
 IRODS_PORT = int(os.getenv('IRODS_PORT'))
@@ -24,7 +25,7 @@ def main(event, context):
     with iRODSSession(host=IRODS_HOST, port=IRODS_PORT, user=IRODS_USER, password=IRODS_PASSWORD, zone=IRODS_ZONE) as session:
         event_name = event['Records'][0]['eventName']
         bucket_name = event['Records'][0]['s3']['bucket']['name']
-        object_key = event['Records'][0]['s3']['object']['key'] # irods/Vault/home/rods/requirements.txt
+        object_key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key']) # irods/Vault/home/rods/requirements.txt
         rods_path = remove_prefix(object_key, IRODS_VAULT_PREFIX) # /home/rods/requirements.txt
 
         logger.info("Processing {} for s3://{}/{}".format(event_name, bucket_name, object_key))
