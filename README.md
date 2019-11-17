@@ -1,10 +1,12 @@
 # irods-s3-salmon
 
+<img align="left" src="salmon.jpg">
+
 `irods-s3-salmon` is a lambda function that swims upstream to update your data catalog, when S3 events occur. 
 
 ## Setup Instructions
 
-1. Create lambda execution role
+1. Create lambda execution role, take note of ARN string
 
     https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html
 
