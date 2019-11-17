@@ -22,11 +22,15 @@
 ## Usage Example
 
 ```
-$ aws s3 cp 56001801068846B_WGZ.indel.vcf.gz s3://jj-irods/irods/Vault/home/rods/56001801068846B_WGZ.indel.vcf.gz
+$ aws s3 cp WGZ-jj.indel.vcf.gz s3://jj-irods/irods/Vault/home/rods/WGZ-jj.indel.vcf.gz
+```
 
+Instantly find the object in iRODS:
+
+```
 $ ils
 /tempZone/home/rods:
-  56001801068846B_WGZ.indel.vcf.gz
+  WGZ-jj.indel.vcf.gz
 ```
 
 ## Setup Instructions
