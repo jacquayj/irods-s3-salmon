@@ -60,7 +60,7 @@ $ ils
     $ cd irods-s3-salmon
     ```
     
-    **Modify config in `env.sh` with your iRODS environment customizations**
+    **Important! Modify config in `env.sh` with your iRODS environment customizations**
 
     ```
     $ ./create.sh
@@ -72,10 +72,10 @@ $ ils
     2. Choose the source bucket.
     3. Choose Properties.
     4. Under Events, configure a notification with the following settings.
-        * Name – lambda-trigger.
-        * Events – "All object create events", "All object delete events".
-        * Send to – Lambda function.
-        * Lambda – s3salmon.
+        * Name – `lambda-trigger`.
+        * Events – `All object create events`, `All object delete events`.
+        * Send to – `Lambda function`.
+        * Lambda – `s3salmon`.
 
     https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-event-notifications.html
 
