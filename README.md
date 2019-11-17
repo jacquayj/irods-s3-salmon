@@ -4,6 +4,11 @@
 
 `irods-s3-salmon` is a lambda function that swims upstream to update your data catalog, when S3 events occur. 
 
+ 
+ 
+ 
+ 
+
 ## Setup Instructions
 
 1. Create lambda execution role, take note of ARN string
