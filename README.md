@@ -4,9 +4,9 @@
 
 `irods-s3-salmon` is a lambda function that swims upstream to update your data catalog, when S3 events occur. Works alongside [irods_resource_plugin_s3](https://github.com/irods/irods_resource_plugin_s3) to enable live streaming updates from S3 buckets to iRODS.
 
-* No more stale and out-of-sync data catalogs
-* No more waiting for scheduled jobs to run  
-* No more orphaned data object records       
+    * No more stale and out-of-sync data catalogs
+    * No more waiting for scheduled jobs to run  
+    * No more orphaned data object records       
 
  ```
                              /`·.¸
