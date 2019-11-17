@@ -8,6 +8,7 @@ pushd package
 zip -r9 ../s3salmon.zip .
 popd
 zip -g s3salmon.zip s3salmon.py
+zip -g s3salmon.zip secrets.py
 
 aws lambda update-function-code \
 --function-name s3salmon \
