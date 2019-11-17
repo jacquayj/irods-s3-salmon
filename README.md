@@ -44,6 +44,8 @@ $ ils
 
 2. Create secrets
 
+    https://console.aws.amazon.com/secretsmanager/home
+
     - Type: `Other type of secrets`
     - Secret key/value #1: `s3salmon_user: rods`
     - Secret key/value #2: `s3salmon_password: testpassword`
