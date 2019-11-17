@@ -2,6 +2,8 @@
 
 #export AWS_PROFILE=<your-profile>
 
+source env.sh
+
 pip3 install --target ./package python-irodsclient
 
 pushd package

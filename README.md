@@ -35,7 +35,6 @@
     **Modify config in env.sh with your iRODS environment customizations**
 
     ```
-    $ source env.sh
     $ ./create.sh
     ```
 
