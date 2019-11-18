@@ -17,7 +17,7 @@
                             `\\´´\¸.·´
  ```
 
-**NOTE:** This has only been tested with `cacheless_attached` mode with [irods_resource_plugin_s3](https://github.com/irods/irods_resource_plugin_s3). Depends on [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+**NOTE:** Depends on [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
 ## Usage Example
 
