@@ -38,7 +38,6 @@ def main(event, context):
         event_name = event['Records'][0]['eventName']
         bucket_name = event['Records'][0]['s3']['bucket']['name']
         object_key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key']) # irods/Vault/home/rods/requirements.txt
-        size = event['Records'][0]['s3']['object']['size']
         rods_path = remove_prefix(object_key, IRODS_VAULT_PREFIX) # /home/rods/requirements.txt
         now = int(time.time())
 
@@ -53,6 +52,8 @@ def main(event, context):
         if "ObjectCreated" in event_name:
             irods_logical = "/{}{}".format(IRODS_ZONE, rods_path)
             s3_physical = "/{}/{}".format(bucket_name, object_key)
+
+            size = event['Records'][0]['s3']['object']['size']
 
             try:
                 session.data_objects.register(s3_physical, irods_logical, rescName=IRODS_S3_RESC, dataSize=size, dataCreate=now, dataModify=now)
