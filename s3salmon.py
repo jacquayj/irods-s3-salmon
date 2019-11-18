@@ -14,7 +14,7 @@ AWS_SECRET_NAME = os.getenv('AWS_SECRET_NAME') or "s3salmon"
 AWS_SECRET_KEY_USER = os.getenv('AWS_SECRET_KEY_USER') or "s3salmon_user"
 AWS_SECRET_KEY_PASS = os.getenv('AWS_SECRET_KEY_PASS') or "s3salmon_password"
 
-logger = logging.getLogger("icatupdater")
+logger = logging.getLogger("s3salmon")
 logger.setLevel(logging.INFO)
 
 def remove_prefix(text, prefix):
