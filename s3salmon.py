@@ -1,4 +1,4 @@
-import os, ssl, logging, json
+import os, ssl, logging, json, time
 from irods.session import iRODSSession
 from irods.exception import CATALOG_ALREADY_HAS_ITEM_BY_THAT_NAME, S3_FILE_STAT_ERR, CAT_NO_ROWS_FOUND
 from secrets import get_secret
@@ -38,7 +38,9 @@ def main(event, context):
         event_name = event['Records'][0]['eventName']
         bucket_name = event['Records'][0]['s3']['bucket']['name']
         object_key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key']) # irods/Vault/home/rods/requirements.txt
+        size = event['Records'][0]['s3']['object']['size']
         rods_path = remove_prefix(object_key, IRODS_VAULT_PREFIX) # /home/rods/requirements.txt
+        now = int(time.time())
 
         logger.info("Processing {} for s3://{}/{}".format(event_name, bucket_name, object_key))
 
@@ -53,10 +55,10 @@ def main(event, context):
             s3_physical = "/{}/{}".format(bucket_name, object_key)
 
             try:
-                session.data_objects.register(s3_physical, irods_logical, rescName=IRODS_S3_RESC)
+                session.data_objects.register(s3_physical, irods_logical, rescName=IRODS_S3_RESC, dataSize=size, dataCreate=now, dataModify=now)
             except CATALOG_ALREADY_HAS_ITEM_BY_THAT_NAME as e:
                 session.data_objects.unregister(irods_logical)
-                session.data_objects.register(s3_physical, irods_logical, rescName=IRODS_S3_RESC)
+                session.data_objects.register(s3_physical, irods_logical, rescName=IRODS_S3_RESC, dataSize=size, dataCreate=now, dataModify=now)
             except S3_FILE_STAT_ERR as e:
                 logger.error("iRODS not able to find {} in S3: {}".format(s3_physical, repr(e)))
                 exit(1)
