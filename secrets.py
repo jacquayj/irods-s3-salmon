@@ -2,9 +2,9 @@ import boto3
 import base64
 from botocore.exceptions import ClientError
 
-def get_secret(region):
+def get_secret(region, sec_name):
 
-    secret_name = "s3salmon"
+    secret_name = sec_name
     region_name = region
 
     # Create a Secrets Manager client

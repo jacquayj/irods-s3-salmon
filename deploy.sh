@@ -4,6 +4,8 @@
 
 pushd "$(dirname ${BASH_SOURCE[0]})"
 
+source env.sh
+
 pip3 install --target ./package python-irodsclient
 
 pushd package
