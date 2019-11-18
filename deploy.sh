@@ -2,6 +2,8 @@
 
 #export AWS_PROFILE=<your-profile>
 
+pushd "$(dirname ${BASH_SOURCE[0]})"
+
 pip3 install --target ./package python-irodsclient
 
 pushd package
@@ -13,3 +15,5 @@ zip -g s3salmon.zip secrets.py
 aws lambda update-function-code \
 --function-name s3salmon \
 --zip-file fileb://s3salmon.zip
+
+popd

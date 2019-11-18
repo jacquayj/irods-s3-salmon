@@ -2,6 +2,8 @@
 
 #export AWS_PROFILE=<your-profile>
 
+pushd "$(dirname ${BASH_SOURCE[0]})"
+
 source env.sh
 
 pip3 install --target ./package python-irodsclient
@@ -24,3 +26,5 @@ aws lambda add-permission --function-name s3salmon --principal s3.amazonaws.com 
 --statement-id s3invoke --action "lambda:InvokeFunction" \
 --source-arn arn:aws:s3:::$S3_BUCKET \
 --source-account $AWS_ACCOUNT_ID
+
+popd
