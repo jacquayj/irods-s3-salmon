@@ -1,5 +1,7 @@
 # irods-s3-salmon
 
+**2020 Update:** See the official consortium release here: https://github.com/irods/irods_client_aws_lambda_s3.
+
 `irods-s3-salmon` is a lambda function that swims upstream to update your data catalog, when S3 events occur. Works alongside [irods_resource_plugin_s3](https://github.com/irods/irods_resource_plugin_s3) to enable live streaming updates from S3 buckets to iRODS.
 
     * No more stale and out-of-sync data catalogs
